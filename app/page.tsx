@@ -1,5 +1,13 @@
-import Image from "next/image";
+import { Container, Title, TopBar } from "@/components/shared";
 
 export default function Home() {
-  return <h1>Hello pizza</h1>;
+  return (
+    <>
+      <Container className="mt-10">
+        <Title text="Усі піци" size="lg" className="font-extrabold" />
+      </Container>
+
+      <TopBar />
+    </>
+  );
 }
