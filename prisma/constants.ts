@@ -264,7 +264,7 @@ export const products = [
     categoryId: 4,
   },
   {
-    name: "Баскський чизкейк",
+    name: "Баскський чізкейк",
     imageUrl:
       "https://la.ua/vinnytsya/wp-content/uploads/sites/2/2024/05/photo_2024-02-28_16-23-37-1.jpg",
     categoryId: 4,
