@@ -1,16 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React from "react";
 import { useIntersection } from "react-use";
 
+import { cn } from "@/lib/utils";
 import { useCategoryStore } from "@/store/category";
+import { ProductWithRelations } from "@/types/prisma";
 
 import { ProductCard } from "./product-card";
 import { Title } from "./title";
 
 interface Props {
   title: string;
-  items: any[];
+  items: ProductWithRelations[];
   categoryId: number;
   className?: string;
   listClassName?: string;
@@ -24,29 +26,30 @@ export const ProductsGroupList: React.FC<Props> = ({
   className,
 }) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
-  const intersectionRef = useRef<HTMLDivElement>(null);
+  const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0.4,
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (intersection?.isIntersecting) {
       setActiveCategoryId(categoryId);
     }
-  }, [categoryId, intersection?.isIntersecting, setActiveCategoryId, title]);
+  }, [categoryId, intersection?.isIntersecting, title]);
 
   return (
     <div className={className} id={title} ref={intersectionRef}>
       <Title text={title} size="lg" className="font-extrabold mb-5" />
 
-      <div className="grid grid-cols-3 gap-[50px]">
-        {items.map((item, i) => (
+      <div className={cn("grid grid-cols-3 gap-[50px]", listClassName)}>
+        {items.map((product, i) => (
           <ProductCard
-            key={item.id}
-            name="Маргарита"
-            imageUrl="https://nostrra-pizzza.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdyka4vajb%2Fimage%2Fupload%2Fv1698576734%2Fhatamagnata%2Fpizzas%2Fapjk5kmtc0u9vrenykqz.png&w=640&q=75"
-            price={390}
-            id={item.id}
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            imageUrl={product.imageUrl}
+            price={product.items[0].price}
+            ingredients={product.ingredients}
           />
         ))}
       </div>
