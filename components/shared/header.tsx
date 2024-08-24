@@ -1,11 +1,11 @@
 import { ArrowRight, ShoppingCart, User } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
 import { Button } from "../ui/button";
 import { Container } from "./container";
-import Link from "next/link";
 import { SearchInput } from "./search-input";
 
 interface Props {
