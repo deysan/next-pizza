@@ -2,9 +2,10 @@
 
 import { useRouter } from "next/navigation";
 
-import { Dialog, DialogContent } from "@/components/ui";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
+import { Dialog, DialogContent } from "@/shared/ui";
 import { ProductWithRelations } from "@/types/prisma";
+
 import { ChooseProductForm } from "../choose-product-form";
 
 interface Props {

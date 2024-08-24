@@ -6,7 +6,7 @@ import {
   GroupVariants,
   PizzaImage,
   Title,
-} from "@/components/shared";
+} from "@/shared/components";
 
 export default async function ProductPage({
   params: { id },

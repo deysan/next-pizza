@@ -2,9 +2,9 @@ import { ArrowRight, ShoppingCart, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/lib/utils";
 
-import { Button } from "../ui/button";
+import { Button } from "../ui";
 import { Container } from "./container";
 import { SearchInput } from "./search-input";
 

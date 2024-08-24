@@ -5,8 +5,8 @@ import Link from "next/link";
 import React from "react";
 import { useClickAway, useDebounce } from "react-use";
 
-import { cn } from "@/lib/utils";
-import { Api } from "@/services/api-client";
+import { cn } from "@/shared/lib/utils";
+import { Api } from "@/shared/services/api-client";
 import { Product } from "@prisma/client";
 
 interface Props {

@@ -6,8 +6,8 @@ import {
   ProductsGroupList,
   Title,
   TopBar,
-} from "@/components/shared";
-import { findPizzas, GetSearchParams } from "@/lib/find-pizzas";
+} from "@/shared/components";
+import { findPizzas, GetSearchParams } from "@/shared/lib/find-pizzas";
 
 export default async function Home({
   searchParams,

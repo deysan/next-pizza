@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import { useFilters } from "@/hooks/use-filters";
-import { useIngredients } from "@/hooks/use-ingredients";
-import { useQueryFilters } from "@/hooks/use-query-filters";
+import { useFilters } from "@/shared/hooks/use-filters";
+import { useIngredients } from "@/shared/hooks/use-ingredients";
+import { useQueryFilters } from "@/shared/hooks/use-query-filters";
 
 import { Input } from "../ui";
 import { CheckboxFiltersGroup } from "./checkbox-filters-group";
