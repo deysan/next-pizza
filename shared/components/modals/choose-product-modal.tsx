@@ -6,7 +6,7 @@ import { cn } from "@/shared/lib/utils";
 import { Dialog, DialogContent } from "@/shared/ui";
 import { ProductWithRelations } from "@/types/prisma";
 
-import { ChooseProductForm } from "../choose-product-form";
+import { ProductForm } from "../product-form";
 
 interface Props {
   product: ProductWithRelations;
@@ -24,11 +24,7 @@ export const ChooseProductModal: React.FC<Props> = ({ product, className }) => {
           className
         )}
       >
-        <ChooseProductForm
-          imageUrl={product.imageUrl}
-          name={product.name}
-          price={product.items[0].price}
-        />
+        <ProductForm product={product} />
       </DialogContent>
     </Dialog>
   );

@@ -12,7 +12,7 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center flex-1 relative w-full h-[500px]",
+        "flex items-center justify-center flex-1 relative w-full",
         className
       )}
     >

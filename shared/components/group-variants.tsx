@@ -1,28 +1,28 @@
 "use client";
 
-import React from "react";
-
 import { cn } from "@/shared/lib/utils";
+import React from "react";
+import { pizzaSizes, pizzaTypes } from "../constants/pizza";
 
-export type Variant = {
-  name: string;
-  value: string;
+type Item = (typeof pizzaTypes)[number] | (typeof pizzaSizes)[number];
+
+export type Variant<T extends Item> = T & {
   disabled?: boolean;
 };
 
-interface Props {
-  items: readonly Variant[];
-  onClick?: (value: Variant["value"]) => void;
-  value?: Variant["value"];
+interface Props<T extends Item> {
+  items: readonly Variant<T>[];
+  onClick?: (value: Variant<T>["value"]) => void;
+  value?: Variant<T>["value"];
   className?: string;
 }
 
-export const GroupVariants: React.FC<Props> = ({
+export const GroupVariants = <T extends Item>({
   items,
   onClick,
   className,
   value,
-}) => {
+}: Props<T>) => {
   return (
     <div
       className={cn(
